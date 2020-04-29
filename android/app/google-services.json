@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "705744044005",
+    "firebase_url": "https://itemdonatestore-alpha.firebaseio.com",
+    "project_id": "itemdonatestore-alpha",
+    "storage_bucket": "itemdonatestore-alpha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705744044005:android:19db1d0ba72895aeb0390c",
+        "android_client_info": {
+          "package_name": "com.example.itemdonatestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705744044005-1jhrv6pek81bqs5un8bct9e3g8i3dgff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.itemdonatestore",
+            "certificate_hash": "ab251b8bb492811429e826b7f5615c6e97a46f06"
+          }
+        },
+        {
+          "client_id": "705744044005-girq4vqi5ti44l268im91i24c1kgh47m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4q6Ui3G86bY080ev4FTnYhk87vScdGX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705744044005-girq4vqi5ti44l268im91i24c1kgh47m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
