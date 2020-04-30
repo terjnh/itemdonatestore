@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
@@ -58,8 +59,6 @@ class _RetrieveItemsState extends State<RetrieveItems> {
   }
 
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +72,18 @@ class _RetrieveItemsState extends State<RetrieveItems> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new Text(
+                        'Available items for donation:',
+                      style: new TextStyle(color: Colors.blueGrey, fontSize: 25.0),
+                    ),
+                  ],
+                ),
                 Center(child: Container(
+                  padding: new EdgeInsets.all(20.0),
                   child: itemDataList.length == 0
                       ? new Text (' No Data is Available')
                       : new ListView.builder(
