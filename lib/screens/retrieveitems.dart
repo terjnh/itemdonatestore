@@ -16,7 +16,6 @@ import 'package:path/path.dart';  // needed for basename
 import 'package:itemdonatestore/data/itemdata.dart';
 import '../data/global.dart' as global;
 
-// TODO: Make UI a scrollview
 
 class RetrieveItems extends StatefulWidget {
   @override

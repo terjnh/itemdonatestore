@@ -101,8 +101,8 @@ class _HomeState extends State<Home> {
     });
   }
 
-  void _addUser(String value) async {
-    await fbDatabase.addUser(value);
+  void _manageUser(String value) async {
+    await fbDatabase.manageUser(value);
 //    print('User ${value} added to Database..');
   }
 
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
                 ),
               ),),
               Center(child: Container(
-                padding: EdgeInsets.all(32.0),
+                padding: EdgeInsets.all(12.0),
                 child: new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -164,9 +164,9 @@ class _HomeState extends State<Home> {
                   new RaisedButton(
                     onPressed: (){
                       Navigator.of(context).pushNamed('/RetrieveItems');
-                      _addUser(global.username);
+                      _manageUser(global.username);
                       },
-                    child: new Text('My Items'),),
+                    child: new Text('View My Items'),),
                 ],
               ),
             ],

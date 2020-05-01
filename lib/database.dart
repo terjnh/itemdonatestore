@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 
+import 'package:itemdonatestore/data/global.dart' as global;
 import './screens/itemlisting.dart' as itemListing;
 
 // itemlisting.dart -> add an item for listing
@@ -24,27 +25,48 @@ import './screens/itemlisting.dart' as itemListing;
 
 // Add user into database (itemdonatestore-alpha -> users)
 // DO NOT add user if it already exists
-Future<Null> addUser(String user) async {
-  dynamic retrieveUsers;
-  List<String> rawUsersList = [];  // add existing users to this List
-  // TODO: usersList might have to be a global variable such that is can be utilised in retrieveitems.dart
-  List<String> usersList = [];
+Future<Null> manageUser(String user) async {
+  List<String> rawExistingUsersList = [];
 
   DatabaseReference usersRef = FirebaseDatabase.instance.reference().child("users");
 
-  // usersRef.orderByChild("username".once() is an async function, so we must wait till it ends to get our data
-  retrieveUsers = await usersRef.orderByChild("username").once();
+  // Populate global.usersList first [get existing users from (itemdonatestore-alpha -> users)]
+  dynamic retrieveExistingUsers = await usersRef.orderByChild("username").once();
+  Map<dynamic, dynamic> existingUsersMap = retrieveExistingUsers.value;
 
-  // Retrieve data from itemdonatestore-alpha -> users as a Map
-  Map<dynamic, dynamic> usersMap = retrieveUsers.value;
-  usersMap.forEach((key, value) => rawUsersList.add(value.toString()));
-  for (var username in rawUsersList) {
-    usersList.add(username.substring(11, username.length-1));
-  };
+  // 1st index in usersList and 1st entry in (itemdonatestore-alpha -> users)
+  if(existingUsersMap?.isEmpty ?? true) {
+    print('No users, creating database "users" ...');
+    usersRef.push().set({
+      "username" : "$user",
+    });
+    global.usersList.add(user);
+    return;
+  }
 
-  // Add user only if it does not exist in database->child('users')
-  if(usersList.contains(user)) return;
+  // (itemdonatestore-alpha -> users) has existing users
+  // retrieve users from (itemdonatestore-alpha -> users) and populate global.usersList
+  if(existingUsersMap.isNotEmpty) {
+    print('Retrieving current existing database "users" ...');
+    existingUsersMap.forEach((key, value) =>
+        rawExistingUsersList.add(value.toString()));
+
+    for (var existingUsername in rawExistingUsersList) {
+      if(global.usersList.contains(user) == false) {
+        global.usersList.add(
+            existingUsername.substring(11, existingUsername.length - 1));
+      }
+    }
+    print('Global usersList = ${global.usersList}');
+  }
+
+  // Add user only if it does not exist in (itemdonatestore-alpha -> users)
+  if(global.usersList.contains(user)) {
+    print('User exists in database "users", will not proceed to add ...');
+    return;
+  }
   else {
+    print('Adding user to database "users" ...');
     usersRef.push().set({
       "username" : "$user",
     });

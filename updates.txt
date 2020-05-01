@@ -1,0 +1,4 @@
+Latest Change:
+- Completed itemdonatestore-alpha->users data management in database.dart.
+- Can use the methodology in database.dart -> manageUser function in other screen classes
+   (eg. retrieveallitems.dart: We want to use that this class to retrieve all items posted from all users)
