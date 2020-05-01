@@ -166,19 +166,7 @@ class _HomeState extends State<Home> {
                       Navigator.of(context).pushNamed('/RetrieveItems');
                       _addUser(global.username);
                       },
-                    child: new Text('View Available Items'),),
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  new RaisedButton(
-                    onPressed: (){Navigator.of(context).pushNamed('/WriteDataPage');},
-                    child: new Text('Test Write Data'),),
-                  new RaisedButton(
-                    onPressed: (){Navigator.of(context).pushNamed('/ShowDataPage');},
-                    child: new Text('Test Show Data'),),
+                    child: new Text('My Items'),),
                 ],
               ),
             ],

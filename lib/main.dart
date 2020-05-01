@@ -13,11 +13,11 @@ Gender: Rather not say
  */
 
 // TODO: to store a database of users in realtime database to read from
+//   TODO: (1May20) now able to store users, need to read back users list and display all items in database
 
 
 import 'package:flutter/material.dart';
 import 'package:itemdonatestore/screens/additem.dart';
-import 'package:itemdonatestore/showdatapage.dart';
 import 'dart:async';
 import 'dart:io';
 //import 'storage.dart' as fbStorage;
@@ -33,7 +33,6 @@ import 'package:path/path.dart';  // needed for basename
 import 'package:itemdonatestore/screens/home.dart';
 import 'package:itemdonatestore/screens/itemlisting.dart';
 import 'package:itemdonatestore/screens/retrieveitems.dart';
-import 'package:itemdonatestore/writedatapage.dart';
 
 void main() async {
 
@@ -78,8 +77,6 @@ class MyApp extends StatelessWidget {
         '/AddItem': (BuildContext context) => new AddItem(),
         '/ItemListing': (BuildContext context) => new ItemListing(),
         '/RetrieveItems': (BuildContext context) => new RetrieveItems(),
-        '/ShowDataPage': (BuildContext context) => new ShowDataPage(),
-        '/WriteDataPage': (BuildContext context) => new WriteDataPage(),
       },
       home: new Home(),  // first page displayed
     );

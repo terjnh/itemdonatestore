@@ -57,7 +57,7 @@ class _RetrieveItemsState extends State<RetrieveItems> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('Listed items for Donation')
+        title: new Text('My Listed Items')
       ),
         body: new SingleChildScrollView(
           padding: new EdgeInsets.all(20.0),
@@ -71,7 +71,7 @@ class _RetrieveItemsState extends State<RetrieveItems> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new Text(
-                        'Available items for donation:',
+                        'My listed items:',
                       style: new TextStyle(color: Colors.blueGrey, fontSize: 25.0),
                     ),
                   ],

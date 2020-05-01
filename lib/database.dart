@@ -27,6 +27,7 @@ import './screens/itemlisting.dart' as itemListing;
 Future<Null> addUser(String user) async {
   dynamic retrieveUsers;
   List<String> rawUsersList = [];  // add existing users to this List
+  // TODO: usersList might have to be a global variable such that is can be utilised in retrieveitems.dart
   List<String> usersList = [];
 
   DatabaseReference usersRef = FirebaseDatabase.instance.reference().child("users");
