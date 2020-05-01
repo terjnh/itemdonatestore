@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
+import 'dart:convert';
 //import 'storage.dart' as fbStorage;
 import '../auth.dart' as fbAuth;
 import '../database.dart' as fbDatabase;
@@ -26,17 +27,10 @@ class _RetrieveItemsState extends State<RetrieveItems> {
   String username = global.username;
   List<ItemData> itemDataList = [];
 
-  // Commenting _signIn function out to use global.username
-//  void _signIn() async {
-//    if (await fbAuth.signInGoogle() == true) {
-//      _username = await fbAuth.username();
-//    }
-//  }
 
   @override
   void initState() {
     super.initState();
-//    _signIn();  // Comment out to user global username
 
     DatabaseReference ref = FirebaseDatabase.instance.reference();
     ref.child("itemsListing/${username}/").once().then((DataSnapshot snap) {
@@ -53,7 +47,7 @@ class _RetrieveItemsState extends State<RetrieveItems> {
         itemDataList.add(singleData);
       }
       setState(() {
-        print('Length : ${itemDataList.length}');
+        print('Length of items : ${itemDataList.length}');
       });
     });
   }

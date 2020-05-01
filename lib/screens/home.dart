@@ -41,14 +41,16 @@ class _HomeState extends State<Home> {
     _signIn();
   }
 
+
+  // TODO: During _signIn, add unique user to Realtime Database, under child('users')
   void _signIn() async {
     if(await fbAuth.signInGoogle() == true) {
       _username = await fbAuth.username();
       setState(() {
+        print('Welcome ${_username}');  // TODO: store uid into database
         _status = 'Welcome ${fbAuth.currentDisplayName}';
         _isLoggedIn = true;
-        global.username = _username;
-//        print('Global username: ${global.username}');
+        global.username = _username;  // current user is assigned to global.username
       });
 //      _initDatabase();
     } else {
@@ -97,6 +99,11 @@ class _HomeState extends State<Home> {
     setState(() {
       _status = 'Data Updated';
     });
+  }
+
+  void _addUser(String value) async {
+    await fbDatabase.addUser(value);
+//    print('User ${value} added to Database..');
   }
 
   @override
@@ -155,7 +162,10 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   new RaisedButton(
-                    onPressed: (){Navigator.of(context).pushNamed('/RetrieveItems');},
+                    onPressed: (){
+                      Navigator.of(context).pushNamed('/RetrieveItems');
+                      _addUser(global.username);
+                      },
                     child: new Text('View Available Items'),),
                 ],
               ),

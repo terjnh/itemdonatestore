@@ -1,16 +1,14 @@
 # itemdonatestore
 
-A new Flutter project.
+A new Flutter project, which is used with Google Firebase.
 
-## Getting Started
+*** This app is a work-in-progress ***
 
-This project is a starting point for a Flutter application.
+Concept of the App:
+- Allow users to log-in and add items which they wish to donate into a shared pool
+- Users can view which items are up for donation.
+- To reduce wastage from throwing away pre-loved items.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+App Screen Preview<br/>
+<img src="https://raw.githubusercontent.com/terjnh/itemdonatestore/master/images/appScreenPreview1.png" width="300">

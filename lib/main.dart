@@ -12,6 +12,9 @@ BD: 24 June 1987
 Gender: Rather not say
  */
 
+// TODO: to store a database of users in realtime database to read from
+
+
 import 'package:flutter/material.dart';
 import 'package:itemdonatestore/screens/additem.dart';
 import 'package:itemdonatestore/showdatapage.dart';
