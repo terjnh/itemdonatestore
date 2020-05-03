@@ -31,8 +31,10 @@ import 'package:path/path.dart';  // needed for basename
 
 // Screens
 import 'package:itemdonatestore/screens/home.dart';
+import 'package:itemdonatestore/screens/login_page.dart';
 import 'package:itemdonatestore/screens/itemlisting.dart';
 import 'package:itemdonatestore/screens/retrieveitems.dart';
+import 'package:itemdonatestore/screens/retrieveallitems.dart';
 
 void main() async {
 
@@ -74,9 +76,11 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         // List of all available pages
         '/Home': (BuildContext context) => new Home(),
+        '/LoginPage': (BuildContext context) => new LoginPage(),
         '/AddItem': (BuildContext context) => new AddItem(),
         '/ItemListing': (BuildContext context) => new ItemListing(),
         '/RetrieveItems': (BuildContext context) => new RetrieveItems(),
+        '/RetrieveAllItems' : (BuildContext context) => new RetrieveAllItems(),
       },
       home: new Home(),  // first page displayed
     );

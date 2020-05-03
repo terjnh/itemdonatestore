@@ -56,46 +56,46 @@ class _RetrieveItemsState extends State<RetrieveItems> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('My Listed Items')
+          title: new Text('My Listed Items')
       ),
-        body: new SingleChildScrollView(
-          padding: new EdgeInsets.all(20.0),
-          child: new Center(
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                        'My listed items:',
-                      style: new TextStyle(color: Colors.blueGrey, fontSize: 25.0),
-                    ),
-                  ],
-                ),
-                Center(child: Container(
-                  padding: new EdgeInsets.all(20.0),
-                  child: itemDataList.length == 0
-                      ? new Text (' No Data is Available')
-                      : new ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      itemCount: itemDataList.length,
-                      itemBuilder: (_, index) {
-                        return UI(
-                          itemDataList[index].category,
-                          itemDataList[index].itemName,
-                          itemDataList[index].location,
-                          itemDataList[index].quantity,
-                        );
-                      },
+      body: new SingleChildScrollView(
+        padding: new EdgeInsets.all(20.0),
+        child: new Center(
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  new Text(
+                    'My listed items:',
+                    style: new TextStyle(color: Colors.blueGrey, fontSize: 25.0),
                   ),
-                ),),
-              ],
-            ),
+                ],
+              ),
+              Center(child: Container(
+                padding: new EdgeInsets.all(20.0),
+                child: itemDataList.length == 0
+                    ? new Text (' No Data is Available')
+                    : new ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: itemDataList.length,
+                  itemBuilder: (_, index) {
+                    return UI(
+                      itemDataList[index].category,
+                      itemDataList[index].itemName,
+                      itemDataList[index].location,
+                      itemDataList[index].quantity,
+                    );
+                  },
+                ),
+              ),),
+            ],
           ),
+        ),
       ),
     );
   }
@@ -123,66 +123,3 @@ class _RetrieveItemsState extends State<RetrieveItems> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  void _retrieveItems() {
-//    DatabaseReference ref = FirebaseDatabase.instance.reference();
-//    ref.child('${_username}').once().then((DataSnapshot snap) {
-//      var keys = snap.value.keys;
-//      var data = snap.value;
-//      itemDataList.clear();
-//      for(var key in keys) {
-//        itemDataList.add(new ItemData(
-//        data[key]['category'],
-//        data[key]['itemName'],
-//        data[key]['location'],
-//        data[key]['quantity'],
-//        data[key]['status'],
-//      ));
-//        print('Length: ${itemDataList.length}');
-//    }
-//      setState(() {
-//        print('Length: ${itemDataList.length}');
-//      });
-//    });
-//
-//  }
-//
-//
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return new Scaffold(
-//      appBar: new AppBar(
-//        title: new Text('Retriving Items'),
-//      ),
-//      body: new SingleChildScrollView(
-//        padding: new EdgeInsets.all(20.0),
-//        child: new Center(
-//          child: new Column(
-//            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            crossAxisAlignment: CrossAxisAlignment.center,
-//            children: <Widget>[
-//              new Text('Retriving Items'),
-//              new RaisedButton(onPressed: _retrieveItems, child: new Text('Retrieve!'),),
-//              new RaisedButton(onPressed: (){Navigator.of(context).pushNamed('/ShowDataPage');}, child: new Text('ShowDataPage'),),
-//              new RaisedButton(onPressed: (){Navigator.of(context).pushNamed('/WriteDataPage');}, child: new Text('WriteDataPage'),),
-//            ],
-//          ),
-//        ),
-//      ),
-//    );
-//  }
-//
-//}

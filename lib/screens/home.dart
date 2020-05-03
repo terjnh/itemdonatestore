@@ -32,13 +32,13 @@ class _HomeState extends State<Home> {
 
   String _username;
 
-  bool _isLoggedIn;
+  bool _isLoggedIn = false;
 
   @override
   void initState() {
     super.initState();
     _status = "Not Authenticated";
-    _signIn();
+//    _signIn();
   }
 
 
@@ -72,14 +72,6 @@ class _HomeState extends State<Home> {
       });
     }
   }
-
-//  Not Utilized Anymore: Consider Deleting!
-//  void _addData() async {
-//    await fbDatabase.addData(_username);
-//    setState(() {
-//      _status = 'Data Added';
-//    });
-//  }
 
   void _removeData() async {
     await fbDatabase.removeData(_username);
@@ -122,10 +114,10 @@ class _HomeState extends State<Home> {
               Center(child: Container(
                 child: Text('Status: ${_status}', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
                 padding: EdgeInsets.all(20.0),
-                ),
+              ),
               ),
               Center(child: Container(
-                padding: EdgeInsets.all(40.0),
+                padding: EdgeInsets.all(10.0),
                 child: new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,12 +126,25 @@ class _HomeState extends State<Home> {
                       onPressed: _isLoggedIn ? null : _signIn,
                       child: new Text( _isLoggedIn ? 'Signed In!' : 'Sign-In with\nGOOGLE', textAlign: TextAlign.center,),
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      color: Colors.lightBlueAccent,
+                      color: Colors.green,
                     ),
                     new RaisedButton(
                       onPressed: _isLoggedIn ? _signOut : null,
                       child: new Text('Sign Out'),
                       color: Colors.yellowAccent,
+                    ),
+                  ],
+                ),
+              ),),
+              Center(child: Container(
+                padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 0.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new RaisedButton(
+                      onPressed: null,
+                      child: new Text('Log-In Page'),
                     ),
                   ],
                 ),
@@ -165,8 +170,14 @@ class _HomeState extends State<Home> {
                     onPressed: (){
                       Navigator.of(context).pushNamed('/RetrieveItems');
                       _manageUser(global.username);
-                      },
+                    },
                     child: new Text('View My Items'),),
+                  new RaisedButton(
+                    onPressed: (){
+                      Navigator.of(context).pushNamed('/RetrieveAllItems');
+                    },
+                    child: new Text('View All Items'),
+                    color: Colors.redAccent,),
                 ],
               ),
             ],
