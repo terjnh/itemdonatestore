@@ -40,7 +40,7 @@ Future<Null> manageUser(String user) async {
     usersRef.push().set({
       "username" : "$user",
     });
-    global.usersList.add(user);
+    // global.usersList.add(user);
     return;
   }
 
@@ -50,15 +50,17 @@ Future<Null> manageUser(String user) async {
     print('Retrieving current existing database "users" ...');
     existingUsersMap.forEach((key, value) =>
         rawExistingUsersList.add(value.toString()));
+    print('Raw Existing Users List: ${rawExistingUsersList}');
 
     for (var existingUsername in rawExistingUsersList) {
-      if(global.usersList.contains(user) == false) {
+      if(global.usersList.length != rawExistingUsersList.length) {
         global.usersList.add(
             existingUsername.substring(11, existingUsername.length - 1));
       }
     }
     print('Global usersList = ${global.usersList}');
   }
+
 
   // Add user only if it does not exist in (itemdonatestore-alpha -> users)
   if(global.usersList.contains(user)) {

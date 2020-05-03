@@ -175,6 +175,7 @@ class _HomeState extends State<Home> {
                   new RaisedButton(
                     onPressed: (){
                       Navigator.of(context).pushNamed('/RetrieveAllItems');
+                      _manageUser(global.username);
                     },
                     child: new Text('View All Items'),
                     color: Colors.redAccent,),
