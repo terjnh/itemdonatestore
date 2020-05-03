@@ -1,14 +1,10 @@
 /*
-TODO: Create a sign-in page separate from the home-page (test google sign-in function):
-TODO: Link: https://medium.com/flutter-community/flutter-implementing-google-sign-in-71888bca24ed
-
-
 TODO: Add pop-up dialog when item is added
 TODO: Retrieve all items posted by all users in retrieveallitems.dart
 */
 
 
-Latest Change:
-- Completed itemdonatestore-alpha->users data management in database.dart.
-- Can use the methodology in database.dart -> manageUser function in other screen classes
-   (eg. retrieveallitems.dart: We want to use that this class to retrieve all items posted from all users)
+
+Alternative way of approaching login with fancier UI
+- Create a sign-in page separate from the home-page (test google sign-in function):
+- Link: https://medium.com/flutter-community/flutter-implementing-google-sign-in-71888bca24ed
