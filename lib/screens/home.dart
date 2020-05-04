@@ -123,12 +123,21 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                        //side: BorderSide(color: Colors.black)
+                      ),
                       onPressed: _isLoggedIn ? null : _signIn,
                       child: new Text( _isLoggedIn ? 'Signed In!' : 'Sign-In with\nGOOGLE', textAlign: TextAlign.center,),
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       color: Colors.green,
+                      elevation: 5.0,
                     ),
                     new RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                        //side: BorderSide(color: Colors.black)
+                      ),
                       onPressed: _isLoggedIn ? _signOut : null,
                       child: new Text('Sign Out'),
                       color: Colors.yellowAccent,
