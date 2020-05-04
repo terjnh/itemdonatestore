@@ -123,24 +123,27 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                        //side: BorderSide(color: Colors.black)
-                      ),
+                      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
+                      elevation: 10.0,
                       onPressed: _isLoggedIn ? null : _signIn,
-                      child: new Text( _isLoggedIn ? 'Signed In!' : 'Sign-In with\nGOOGLE', textAlign: TextAlign.center,),
+                      child: new Text(
+                          _isLoggedIn ? 'Signed In!' : 'Sign-In with\nGOOGLE',
+                          textAlign: TextAlign.center,
+                          style: new TextStyle(fontSize: 18.0,
+                          color: Colors.white)),
                       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      color: Colors.green,
-                      elevation: 5.0,
+                      color: Colors.blueAccent,
                     ),
                     new RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                        //side: BorderSide(color: Colors.black)
-                      ),
+                      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
+                      elevation: 10.0,
                       onPressed: _isLoggedIn ? _signOut : null,
-                      child: new Text('Sign Out'),
-                      color: Colors.yellowAccent,
+                      child: new Text(
+                          'Sign Out',
+                          textAlign: TextAlign.center,
+                          style: new TextStyle(fontSize: 18.0,
+                          color: Colors.white)),
+                      color: Colors.blueAccent,
                     ),
                   ],
                 ),
@@ -169,7 +172,7 @@ class _HomeState extends State<Home> {
                       elevation: 10.0,
                       onPressed: (){Navigator.of(context).pushNamed('/AddItem');},
                       child: new Text('Add an Item!', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
-                      color: Colors.blueGrey,
+                      color: Colors.blueAccent,
                     ),
                   ],
                 ),
@@ -189,7 +192,7 @@ class _HomeState extends State<Home> {
                         _manageUser(global.username);
                       },
                       child: new Text('View My Items', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
-                      color: Colors.blueGrey,
+                      color: Colors.blueAccent,
                     ),
                     new RaisedButton(
                       shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
@@ -199,7 +202,7 @@ class _HomeState extends State<Home> {
                         _manageUser(global.username);
                       },
                       child: new Text('View All Items', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
-                      color: Colors.blueGrey,
+                      color: Colors.blueAccent,
                     ),
                   ],
                 ),
