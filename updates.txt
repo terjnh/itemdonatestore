@@ -5,7 +5,8 @@ TODO: Beautify UI
  - Starting with home page (4 May 2020)
 */
 
-
+Update (4 May 2020):
+- Changed RaisedButton UI Style for Home Screen
 
 Alternative way of approaching login with fancier UI
 - Create a sign-in page separate from the home-page (test google sign-in function):

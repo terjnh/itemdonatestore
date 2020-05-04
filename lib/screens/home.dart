@@ -145,51 +145,66 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),),
+//              Center(child: Container(
+//                padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 0.0),
+//                child: new Row(
+//                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                  crossAxisAlignment: CrossAxisAlignment.center,
+//                  children: <Widget>[
+//                    new RaisedButton(
+//                      onPressed: null,
+//                      child: new Text('Log-In Page'),
+//                    ),
+//                  ],
+//                ),
+//              ),),
               Center(child: Container(
-                padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 0.0),
+                padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 10.0),
                 child: new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new RaisedButton(
-                      onPressed: null,
-                      child: new Text('Log-In Page'),
-                    ),
-                  ],
-                ),
-              ),),
-              Center(child: Container(
-                padding: EdgeInsets.all(12.0),
-                child: new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new RaisedButton(
+                      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0), ),
+                      elevation: 10.0,
                       onPressed: (){Navigator.of(context).pushNamed('/AddItem');},
-                      child: new Text('Add an Item!'),
+                      child: new Text('Add an Item!', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
+                      color: Colors.blueGrey,
                     ),
                   ],
                 ),
               ),),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  new RaisedButton(
-                    onPressed: (){
-                      Navigator.of(context).pushNamed('/RetrieveItems');
-                      _manageUser(global.username);
-                    },
-                    child: new Text('View My Items'),),
-                  new RaisedButton(
-                    onPressed: (){
-                      Navigator.of(context).pushNamed('/RetrieveAllItems');
-                      _manageUser(global.username);
-                    },
-                    child: new Text('View All Items'),
-                    color: Colors.redAccent,),
-                ],
-              ),
+
+              Center(child: Container(
+                padding: EdgeInsets.fromLTRB(10.0, 16.0, 10.0, 10.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new RaisedButton(
+                      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
+                      elevation: 10.0,
+                      onPressed: (){
+                        Navigator.of(context).pushNamed('/RetrieveItems');
+                        _manageUser(global.username);
+                      },
+                      child: new Text('View My Items', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
+                      color: Colors.blueGrey,
+                    ),
+                    new RaisedButton(
+                      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
+                      elevation: 10.0,
+                      onPressed: (){
+                        Navigator.of(context).pushNamed('/RetrieveAllItems');
+                        _manageUser(global.username);
+                      },
+                      child: new Text('View All Items', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
+                      color: Colors.blueGrey,
+                    ),
+                  ],
+                ),
+              ),),
+
             ],
           ),
         ),
