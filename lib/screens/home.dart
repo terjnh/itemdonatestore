@@ -27,8 +27,6 @@ class _HomeState extends State<Home> {
   final FirebaseStorage storage;
 
   String _status;
-  String _location;
-  StreamSubscription<Event> _counterSubscription;
 
   String _username;
 
@@ -148,19 +146,6 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),),
-//              Center(child: Container(
-//                padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 0.0),
-//                child: new Row(
-//                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//                  crossAxisAlignment: CrossAxisAlignment.center,
-//                  children: <Widget>[
-//                    new RaisedButton(
-//                      onPressed: null,
-//                      child: new Text('Log-In Page'),
-//                    ),
-//                  ],
-//                ),
-//              ),),
               Center(child: Container(
                 padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 10.0),
                 child: new Row(
@@ -170,7 +155,7 @@ class _HomeState extends State<Home> {
                     new RaisedButton(
                       shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0), ),
                       elevation: 10.0,
-                      onPressed: (){Navigator.of(context).pushNamed('/AddItem');},
+                      onPressed: _isLoggedIn ? (){Navigator.of(context).pushNamed('/AddItem');} : null,
                       child: new Text('Add an Item!', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
                       color: Colors.blueAccent,
                     ),
@@ -187,20 +172,22 @@ class _HomeState extends State<Home> {
                     new RaisedButton(
                       shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
                       elevation: 10.0,
-                      onPressed: (){
+                      onPressed: _isLoggedIn ? (){
                         Navigator.of(context).pushNamed('/RetrieveItems');
                         _manageUser(global.username);
-                      },
+                      }
+                      : null,
                       child: new Text('View My Items', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
                       color: Colors.blueAccent,
                     ),
                     new RaisedButton(
                       shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
                       elevation: 10.0,
-                      onPressed: (){
+                      onPressed: _isLoggedIn ? (){
                         Navigator.of(context).pushNamed('/RetrieveAllItems');
                         _manageUser(global.username);
-                      },
+                      }
+                      : null,
                       child: new Text('View All Items', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
                       color: Colors.blueAccent,
                     ),

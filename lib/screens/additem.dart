@@ -57,6 +57,21 @@ class _AddItemState extends State<AddItem> {
     }
   }
 
+  // Category == null   error pop-up dialog
+  void _categoryEmpty() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text('Error'),
+            content: new Text('No category selected'),
+            actions: <Widget>[
+              new FlatButton(onPressed: (){ Navigator.of(context).pop();}, child: new Text('Close'),)
+            ],
+          );
+        }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -145,8 +160,11 @@ class _AddItemState extends State<AddItem> {
         new Row(
           children: <Widget>[
             new RaisedButton(
-              onPressed: _sendToServer,
-              child: new Text('Add'),
+              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0),),
+              elevation: 10.0,
+              onPressed: category == null ? _categoryEmpty : _sendToServer,   // if category entry != null, _sendToServer
+              child: new Text('Add', style: new TextStyle(fontSize: 18.0, color: Colors.white)),
+              color: Colors.blueAccent,
             )
           ],
         ),

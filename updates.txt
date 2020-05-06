@@ -5,6 +5,10 @@ TODO: Beautify UI
  - Starting with home page (4 May 2020)
 */
 
+Update (6 May 2020):
+- Disabled 'Add Item / View Items' buttons (3 buttons) when not logged in
+- Created AlertDialog if no category selected in 'additem' screen
+
 Update (4 May 2020):
 - Changed RaisedButton UI Style for Home Screen
 
