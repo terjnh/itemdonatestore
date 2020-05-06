@@ -10,5 +10,17 @@ Concept of the App:
 - To reduce wastage from throwing away pre-loved items.
 
 
-App Screen Preview<br/>
+*** UPDATES ***
+
+Update (6 May 2020):
+- Disabled 'Add Item / View Items' buttons (3 buttons) when not logged in
+- Created AlertDialog if no category selected in 'additem' screen
+
+Update (4 May 2020):
+- Changed RaisedButton UI Style for Home Screen
+
+
+
+*** App Screen Preview *** 
+<br/>
 <img src="https://raw.githubusercontent.com/terjnh/itemdonatestore/master/images/appScreenPreview1.png" width="300">
