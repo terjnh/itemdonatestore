@@ -13,6 +13,7 @@ Concept of the App:
 *** UPDATES ***
 
 Update (6 May 2020):
+- Added validator for 'location' TextField in 'additem' screen
 - Disabled 'Add Item / View Items' buttons (3 buttons) when not logged in
 - Created AlertDialog if no category selected in 'additem' screen
 

@@ -130,7 +130,7 @@ class _AddItemState extends State<AddItem> {
             new Flexible(
               child: new TextFormField(
                 decoration: new InputDecoration(hintText: 'Location'),
-                validator: null,
+                validator: validateLocation,
                 onSaved: (val) {
                   location = val;
                 },
